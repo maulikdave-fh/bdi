@@ -32,7 +32,7 @@
         Scores
           Biodiversity Index
             Species Density
-            id1["~Species Spread~"]
+            Species Spread
             Species Score
             Ratio of Taxa count in Eco-region / Taxa count in Restoration Site
           Habitat Indicator
