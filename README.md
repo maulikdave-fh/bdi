@@ -67,5 +67,22 @@
       J --> M[Message Broker]
       H --> M 
       I --> M
+      D --> L
+      E --> L
+      D --> I
+      E --> I    
 ```
+### APIs
+#### EcoRegionService
+```mermaid
+    classDiagram
+        class Region{
+            <<record>>
+            -id: long
+            -name: String
+            -geoHash: String
+        }
+```
+##### getRegion()
+```Region getRegion(lat:double, lng:double)```
 
