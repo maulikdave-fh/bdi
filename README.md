@@ -5,7 +5,7 @@
 ### Tools
 - Biodiversity Index Calculator
 - Reference Site(s) Comparator
-- Primary Habitat Detector
+- Habitat Detector
 
 ### Brainstorming
 ```mermaid
