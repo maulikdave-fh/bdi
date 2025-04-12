@@ -82,7 +82,7 @@
         I --> |uses| F
         I --> |uses| E
 ```
-### System APIs
+### System's APIs
 ```mermaid
     sequenceDiagram
         participant RP as Restoration Practitioner
@@ -100,3 +100,10 @@
         BDI -->> BDI : Calculate Biodiversity Index, Habitat Indicator
         BDI -->> RP : Biodiversity index + Habitat Indicator
 ```
+#### System APIs Listing
+1. sign_up(fullname, username, password, profileimage) -> auth token, userId
+2. login(username, password) -> auth token, userId
+3. get_homepage(userId) -> homepage + RP's restoration and reference sites
+4. create_site(userId, polygon, siteType) -> siteId, biodiversity index, habitat indicator. siteType - restoration | reference
+5. update_site(userId, siteId, polygon, siteType) -> siteId, biodiversity index, habitat indicator
+6. delete_site(userId, siteId) -> confirmation
