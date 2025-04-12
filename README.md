@@ -15,7 +15,14 @@
 3. Discussion Forum
 
 ### Quality Requirements
-1. 
+#### Scalability
+1. Millions of observations coming from CSIS(s) in the first fetch
+2. Thousands of observations coming from CSIS(s) in subsequent fetches (depending on the fetch frequency & number of eco-regions supported)
+3. Thousands of RPs - most RPs spending 1-2 hours/day
+#### Availability
+1. Aim for 99.9% uptime
+#### Performance
+1. < 2secs of web-page load-time at 95pt
 
 ### Brainstorming
 ```mermaid
