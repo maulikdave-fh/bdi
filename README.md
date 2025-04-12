@@ -82,42 +82,21 @@
         I --> |uses| F
         I --> |uses| E
 ```
-
-### Sketching
-
+### System APIs
 ```mermaid
-    flowchart LR
-      A[Web App] --> B[API Gateway]
-      B --> C[UserService]   
-      B --> D[RestorationSiteService]
-      B --> E[ReferenceSiteService]
-      B --> F[BiodiversityIndexer]
-      B --> G[HabitatIndicator]
-      F --> H[SpeciesService]
-      F --> I[ObservationsService]
-      G --> H
-      G --> I
-      J[Integrator] --> K[CSIS]
-      J --> L[EcoRegionService]
-      J --> M[Message Broker]
-      H --> M 
-      I --> M
-      D --> L
-      E --> L
-      D --> I
-      E --> I    
+    sequenceDiagram
+        participant RP as Restoration Practitioner
+        participant BDI as BDI Platform
+        participant CSIS
+        BDI ->> CSIS : fetchObservations(eco-region coordinates)
+        CSIS -->> BDI : Observations
+        BDI -->> BDI : Store Observations, Update species
+        RP ->> BDI : signup(fullname, username, password, etc)
+        BDI -->> RP : Authentication Token + userId
+        RP ->> BDI : getHomePage(useId)
+        BDI -->> BDI : Calculate Biodiversity Index, Habitat Indicator
+        BDI -->> RP: Homepage + Restoration Sites, Reference Sites
+        RP ->> BDI : Create / View Restoration site / Reference site
+        BDI -->> BDI : Calculate Biodiversity Index, Habitat Indicator
+        BDI -->> RP : Biodiversity index + Habitat Indicator
 ```
-### APIs
-#### EcoRegionService
-```mermaid
-    classDiagram
-        class Region{
-            <<record>>
-            -id: long
-            -name: String
-            -geoHash: String
-        }
-```
-##### getRegion()
-```Region getRegion(lat:double, lng:double)```
-
