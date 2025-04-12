@@ -1,11 +1,13 @@
 ### Purpose
-- Help restoration-practitioners make data-driven decisions
-- Restore -> Observe -> Analyze 
+- Help restoration practitioners make data-driven decisions to improve Restore -> Observe -> Analyze cycle
 
-### Tools
-- Biodiversity Index Calculator
-- Reference Site(s) Comparator
-- Habitat Detector
+### Functional Requirements
+1. Biodiversity Index - Derived for a restoration site in-context of the eco-region where the site belongs to
+2. Restoration Site -> Reference Site(s) Comparator - restoration practioner can select reference site(s) and compare her restoration site index with that of reference site(s)
+3. Habitat Indicator -> indicates how a given restoration site is evolving over-time in-terms of habitat niches
+
+### Quality Requirements
+1. 
 
 ### Brainstorming
 ```mermaid
