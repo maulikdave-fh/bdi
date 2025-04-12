@@ -1,5 +1,5 @@
 ### Purpose
-- Help restoration practitioners make data-driven decisions to improve Restore -> Observe -> Analyze cycle
+- Online platform to help restoration practitioners make data-driven decisions to improve Restore -> Observe -> Analyze cycle
 
 ### Functional Requirements
 #### In Scope
@@ -10,7 +10,7 @@
 5. Habitat Indicator -> indicates how a given restoration site is evolving over-time in-terms of habitat niches
 
 #### Out of Scope
-1. Ability to add observations. RPs have to do it directly to supported CSIS, atleast in current version being built
+1. Ability to add observations. RPs have to do it directly to supported Crowdsourced Species Identification System (CSIS), atleast in current version being built
 2. Native Mobile Apps support. 
 
 ### Quality Requirements
