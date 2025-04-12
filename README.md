@@ -1,5 +1,5 @@
 ### Purpose
-- Online platform to help restoration practitioners make data-driven decisions to improve Restore -> Observe -> Analyze cycle
+- Build online platform to help restoration practitioners make data-driven decisions to improve Restore -> Observe -> Analyze cycle
 
 ### Functional Requirements
 #### In Scope
@@ -120,9 +120,18 @@
 8. get_biodiversity_index(userId, siteId) -> biodiversity index
 9. get_habitat_indicator(userId, siteId) -> habitat indicator
 
-### System Architecture
-
+### System Architecture (WIP)
 ```mermaid
     flowchart LR
-        RPS([Restoration Practitioners Service]) --> SQL[(SQL Database)]
+        RP([Restoration Practitioner]) <--> APIGateway([API Gateway])
+        APIGateway <--> WebApp([Web App Service])
+        WebApp <--> RPS([Restoration Practitioners Service])
+        RPS <--> RPSSQL[(SQL Database)]
+        RPS --> |Profile Images| ObjStore[(Object Store)]
+        APIGateway <--> RestorationSite([Restoration Site Service])
+        RestorationSite <--> RSSSQL[(SQL Database)]
 ```
+#### Notes
+1. CDN will be leveraged to reduce latency.
+2. All services will have multiple instances and will be behind a load-balancer
+3. Databases will be sharded & will have database replication
