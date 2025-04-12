@@ -48,6 +48,24 @@
           Habitat Indicator              
 ```
 
+### Domain Model / Concept Model
+```mermaid
+    flowchart LR
+        A([Observation Service]) --> |fetches observations| B([CSIS])
+        A --> |determines eco-region| C([Eco-region Service])
+        D([Species Service]) --> |extracts species info| A
+        E([Biodiversity Indexer]) --> |uses| A
+        E([Biodiversity Indexer]) --> |uses| D
+        F([Habitat Indicator]) --> |uses| D
+        F --> |uses| A
+        G([Restoration Practitioner]) --> |creates| H([Restoration Site])
+        G --> |identifies| I([Reference Site])
+        H --> |uses| E
+        H --> |uses| F
+        I --> |uses| F
+        I --> |uses| E
+```
+
 ### Sketching
 
 ```mermaid
