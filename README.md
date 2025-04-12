@@ -11,7 +11,8 @@
 
 #### Out of Scope
 1. Ability to add observations. RPs have to do it directly to supported Crowdsourced Species Identification System (CSIS), atleast in current version being built
-2. Native Mobile Apps support. 
+2. Native Mobile Apps support
+3. Discussion Forum
 
 ### Quality Requirements
 1. 
