@@ -89,16 +89,16 @@
         participant BDI as BDI Platform
         participant CSIS
         BDI ->> CSIS : fetchObservations(eco-region coordinates)
-        CSIS -->> BDI : Observations
-        BDI -->> BDI : Store Observations, Update species
-        RP ->> BDI : signup(fullname, username, password, etc)
-        BDI -->> RP : Authentication Token + userId
-        RP ->> BDI : getHomePage(useId)
+        CSIS -->> +BDI : Observations
+        BDI -->> -BDI : Store Observations, Update species
+        RP ->> +BDI : signup(fullname, username, password, etc)
+        BDI -->> -RP : Authentication Token + userId
+        RP ->> +BDI : getHomePage(useId)
         BDI -->> BDI : Calculate Biodiversity Index, Habitat Indicator
-        BDI -->> RP: Homepage + Restoration Sites, Reference Sites
-        RP ->> BDI : Create / View Restoration site / Reference site
+        BDI -->> -RP: Homepage + Restoration Sites, Reference Sites
+        RP ->> +BDI : Create / View Restoration site / Reference site
         BDI -->> BDI : Calculate Biodiversity Index, Habitat Indicator
-        BDI -->> RP : Biodiversity index + Habitat Indicator
+        BDI -->> -RP : Biodiversity index + Habitat Indicator
 ```
 #### System APIs Listing
 1. sign_up(fullname, username, password, profileimage) -> auth token, userId
@@ -107,3 +107,5 @@
 4. create_site(userId, polygon, siteType) -> siteId, biodiversity index, habitat indicator. siteType - restoration | reference
 5. update_site(userId, siteId, polygon, siteType) -> siteId, biodiversity index, habitat indicator
 6. delete_site(userId, siteId) -> confirmation
+
+### System Architecture
