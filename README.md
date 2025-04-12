@@ -48,7 +48,7 @@
           Habitat Indicator              
 ```
 
-### Concept
+### Sketching
 
 ```mermaid
     flowchart LR
