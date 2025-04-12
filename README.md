@@ -91,21 +91,38 @@
         BDI ->> CSIS : fetchObservations(eco-region coordinates)
         CSIS -->> +BDI : Observations
         BDI -->> -BDI : Store Observations, Update species
-        RP ->> +BDI : signup(fullname, username, password, etc)
+        RP ->> +BDI : sign_up(fullname, username, password, etc)
         BDI -->> -RP : Authentication Token + userId
-        RP ->> +BDI : getHomePage(useId)
-        BDI -->> BDI : Calculate Biodiversity Index, Habitat Indicator
+        RP ->> +BDI : get_homepage(useId)
         BDI -->> -RP: Homepage + Restoration Sites, Reference Sites
         RP ->> +BDI : Create / View Restoration site / Reference site
-        BDI -->> BDI : Calculate Biodiversity Index, Habitat Indicator
         BDI -->> -RP : Biodiversity index + Habitat Indicator
+        RP ->> +BDI : get_biodiversity_index(userId, siteId)
+        BDI -->> BDI : Calculate Biodiversity Index
+        BDI -->> -RP : biodiversity index
+        RP ->> +BDI : get_habitat_indicator(userId, siteId)
+        BDI -->> BDI : Calculate habitat indicator
+        BDI -->> -RP : habitat indicator
+        RP ->> BDI : login(username, password)
+        BDI -->> RP : auth token, userId
+        RP ->> BDI : logout(userId)
+        BDI --> RP : confirmation
+             
 ```
 #### System APIs Listing
 1. sign_up(fullname, username, password, profileimage) -> auth token, userId
 2. login(username, password) -> auth token, userId
-3. get_homepage(userId) -> homepage + RP's restoration and reference sites
-4. create_site(userId, polygon, siteType) -> siteId, biodiversity index, habitat indicator. siteType - restoration | reference
-5. update_site(userId, siteId, polygon, siteType) -> siteId, biodiversity index, habitat indicator
-6. delete_site(userId, siteId) -> confirmation
+3. logout(userId) -> confirmation
+4. get_homepage(userId) -> homepage + RP's restoration and reference sites
+5. create_site(userId, polygon, siteType) -> siteId. siteType - restoration | reference
+6. update_site(userId, siteId, polygon, siteType) -> siteId
+7. delete_site(userId, siteId) -> confirmation
+8. get_biodiversity_index(userId, siteId) -> biodiversity index
+9. get_habitat_indicator(userId, siteId) -> habitat indicator
 
 ### System Architecture
+
+```mermaid
+    flowchart LR
+        RPS([Restoration Practitioners Service]) --> SQL[(SQL Database)]
+```
