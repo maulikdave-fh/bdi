@@ -83,12 +83,6 @@
         I --> |uses| E
 ```
 
-### Concept View
-```mermaid
-    flowchart LR
-        
-```
-
 ### System's APIs
 ```mermaid
     sequenceDiagram
