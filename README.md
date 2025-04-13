@@ -132,6 +132,7 @@
         APIGateway <--> Site([Restoration / Reference<br/> Site Service])
         Site <--> RSSSQL[(Key/Value Store)]
         APIGateway <--> ObjStore
+        IPP([Image Processing<br/>Pipleine]) --> |Compressed Image| ObjStore
 ```
 #### Notes
 1. CDN will be leveraged to reduce latency.
