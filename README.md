@@ -136,6 +136,6 @@
         
 ```
 #### Notes
-1. CDN will be leveraged to reduce latency.
+1. CDN will be leveraged to reduce latency. Web content (HTML, CSS, JS and Images) will be cached on the edge servers.
 2. All services will have multiple instances and will be behind a load-balancer
 3. Databases will be sharded / partitioned & will have database replication
