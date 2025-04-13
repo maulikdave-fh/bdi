@@ -131,6 +131,7 @@
         RPS --> |Profile Images| ObjStore[(Object Store)]
         APIGateway <--> Site([Restoration / Reference<br/> Site Service])
         Site <--> RSSSQL[(SQL Database)]
+        APIGateway <--> ObjStore
 ```
 #### Notes
 1. CDN will be leveraged to reduce latency.
