@@ -126,10 +126,10 @@
     flowchart LR
         RP([Restoration Practitioner]) <--> APIGateway([API Gateway])
         APIGateway <--> WebApp([Web App Service])
-        RP <--> RPS([Restoration Practitioners Service])
+        APIGateway <--> RPS([Restoration Practitioners Service])
         RPS <--> RPSSQL[(NoSQL Document Store)]
         RPS --> |Profile Images| ObjStore[(Object Store)]
-        RP <--> RestorationSite([Restoration Site Service])
+        APIGateway <--> RestorationSite([Restoration Site Service])
         RestorationSite <--> RSSSQL[(NoSQL Database)]
 ```
 #### Notes
