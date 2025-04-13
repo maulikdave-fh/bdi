@@ -43,7 +43,6 @@
           IUCN Status
           isInvasive
           isIntroduced
-          No. of Observations in Eco-region / No. of Observations at Restoration Site
           Position in Food-chain                    
         Crowdsourced Species Identification System (CSIS)
           iNaturalist
@@ -61,7 +60,8 @@
             Species Density            
             Species Score
                 Species Spread
-            Ratio of Taxa count in Eco-region / Taxa count in Restoration Site
+                No. of Observations in Eco-region / No. of Observations at Restoration Site
+               Ratio of Taxa count in Eco-region / Taxa count in Restoration Site
           Habitat Indicator              
 ```
 
