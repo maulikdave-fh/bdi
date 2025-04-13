@@ -130,7 +130,7 @@
         RPS <--> RPSSQL[(NoSQL<br/> Document Store)]
         RPS --> |Profile Images| ObjStore[(Object Store)]
         APIGateway <--> Site([Restoration / Reference<br/> Site Service])
-        Site <--> RSSSQL[(SQL Database)]
+        Site <--> RSSSQL[(Key/Value Store)]
         APIGateway <--> ObjStore
 ```
 #### Notes
