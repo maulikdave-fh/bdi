@@ -136,4 +136,4 @@
 #### Notes
 1. CDN will be leveraged to reduce latency.
 2. All services will have multiple instances and will be behind a load-balancer
-3. Databases will be sharded & will have database replication
+3. Databases will be sharded / partitioned & will have database replication
