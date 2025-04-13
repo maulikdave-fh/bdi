@@ -1,5 +1,5 @@
 ### Purpose
-- Build online platform to help restoration practitioners make data-driven decisions to improve Restore -> Observe -> Analyze cycle
+- Build online platform to help restoration practitioners make data-driven decisions to improve "Restore -> Observe -> Analyze" cycle
 
 ### Functional Requirements
 #### In Scope
@@ -103,7 +103,7 @@
         RP ->> +BDI : get_homepage(useId)
         BDI -->> -RP: Homepage + Restoration Sites, Reference Sites
         RP ->> +BDI : Create / View Restoration site / Reference site
-        BDI -->> -RP : Biodiversity index + Habitat Indicator
+        BDI -->> -RP : confirmation
         RP ->> +BDI : get_biodiversity_index(userId, siteId)
         BDI -->> BDI : Calculate Biodiversity Index
         BDI -->> -RP : biodiversity index
@@ -113,7 +113,7 @@
         RP ->> BDI : login(username, password)
         BDI -->> RP : auth token, userId
         RP ->> BDI : logout(userId)
-        BDI --> RP : confirmation
+        BDI -->> RP : confirmation
              
 ```
 #### System APIs Listing
