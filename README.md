@@ -127,10 +127,10 @@
         RP([Restoration Practitioner]) <--> APIGateway([API Gateway])
         APIGateway <--> WebApp([Web App Service])
         APIGateway <--> RPS([Restoration Practitioners Service])
-        RPS <--> RPSSQL[(NoSQL Document Store)]
+        RPS <--> RPSSQL[(NoSQL<br/> Document Store)]
         RPS --> |Profile Images| ObjStore[(Object Store)]
-        APIGateway <--> RestorationSite([Restoration Site Service])
-        RestorationSite <--> RSSSQL[(NoSQL Database)]
+        APIGateway <--> Site([Restoration / Reference<br/> Site Service])
+        Site <--> RSSSQL[(SQL Database)]
 ```
 #### Notes
 1. CDN will be leveraged to reduce latency.
