@@ -126,11 +126,11 @@
     flowchart LR
         RP([Restoration Practitioner]) <--> APIGateway([API Gateway])
         APIGateway <--> WebApp([Web App Service])
-        WebApp <--> RPS([Restoration Practitioners Service])
-        RPS <--> RPSSQL[(SQL Database)]
+        RP <--> RPS([Restoration Practitioners Service])
+        RPS <--> RPSSQL[(NoSQL Document Store)]
         RPS --> |Profile Images| ObjStore[(Object Store)]
-        APIGateway <--> RestorationSite([Restoration Site Service])
-        RestorationSite <--> RSSSQL[(SQL Database)]
+        RP <--> RestorationSite([Restoration Site Service])
+        RestorationSite <--> RSSSQL[(NoSQL Database)]
 ```
 #### Notes
 1. CDN will be leveraged to reduce latency.
