@@ -128,11 +128,12 @@
         APIGateway <--> WebApp([Web App Service])
         APIGateway <--> RPS([Restoration Practitioners Service])
         RPS <--> RPSSQL[(NoSQL<br/> Document Store)]
-        RPS --> |Profile Images| ObjStore[(Object Store)]
+        RPS --> |Profile Images| IPP([Image Processing<br/>Pipleine])
+        IPP --> |Compressed Image| ObjStore([Object <br/>Store])
         APIGateway <--> Site([Restoration / Reference<br/> Site Service])
         Site <--> RSSSQL[(Key/Value Store)]
         APIGateway <--> ObjStore
-        IPP([Image Processing<br/>Pipleine]) --> |Compressed Image| ObjStore
+        
 ```
 #### Notes
 1. CDN will be leveraged to reduce latency.
