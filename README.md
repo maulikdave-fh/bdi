@@ -117,7 +117,7 @@
              
 ```
 #### System APIs Listing
-1. sign_up(fullname, username, password, profileimage) -> auth token, userId
+1. sign_up(fullname, username, password, email, profileimage) -> auth token, userId
 2. login(username, password) -> auth token, userId
 3. logout(userId) -> confirmation
 4. get_homepage(userId) -> homepage + RP's restoration and reference sites
