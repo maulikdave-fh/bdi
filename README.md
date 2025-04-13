@@ -129,7 +129,7 @@
         APIGateway <--> RPS([Restoration Practitioners Service])
         RPS <--> RPSSQL[(NoSQL<br/> Document Store)]
         RPS --> |Profile Images| IPP([Image Processing<br/>Pipleine])
-        IPP --> |Compressed Image| ObjStore([Object <br/>Store])
+        IPP --> |Compress and <br/>Optimal Resolution| ObjStore[(Object <br/>Store)]
         APIGateway <--> Site([Restoration / Reference<br/> Site Service])
         Site <--> RSSSQL[(Key/Value Store)]
         APIGateway <--> ObjStore
