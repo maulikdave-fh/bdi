@@ -1,5 +1,7 @@
 ### Purpose
-- Build online platform to help restoration practitioners make data-driven decisions to improve "Restore -> Observe -> Analyze" cycle
+Build online platform to help restoration practitioners
+- make data-driven decisions to improve "Restore -> Observe -> Analyze" cycle
+- provide meaningful insights into their project to policy-makers, funding partners & clients.
 
 ### Functional Requirements
 #### In Scope
@@ -107,8 +109,7 @@
         RP ->> BDI : login(username, password)
         BDI -->> RP : auth token, userId
         RP ->> BDI : logout(userId)
-        BDI -->> RP : confirmation
-             
+        BDI -->> RP : confirmation             
 ```
 #### System APIs Listing
 1. sign_up(fullname, username, password, email, profileimage) -> auth token, userId
@@ -133,7 +134,18 @@
         APIGateway <--> Site([Restoration / Reference<br/> Site Service])
         Site <--> RSSSQL[(Key/Value Store)]
         APIGateway <--> ObjStore
-        
+        APIGateway <--> BDS([BiodiversityIndexService])
+        APIGateway <--> HHIS([HabitatHealthIndicatorService])
+        Obs([ObservationsService]) --> |Fetches Observations| CSIS([CSIS])
+        Obs --> |Get matching Eco-region<br/>for observation| EcoRegionService
+        EcoRegionService --> |CRUD on eco-regions| EcoRSQL[(Key-Value Store)]
+        Obs --> |CRUD on observations| ObsSQL[(SQL Datastore)] 
+        Sps([SpeciesService]) --> |Extracts Species Info| Obs
+        Sps --> |CRUD Species data| SpsStore[(SQL Datastore)]
+        BDS --> Sps
+        BDS --> Obs
+        HHIS --> Sps
+        HHIS --> Obs            
 ```
 #### Notes
 1. CDN will be leveraged to reduce latency. Web content (HTML, CSS, JS and Images) will be cached on the edge servers.
