@@ -70,9 +70,9 @@ Build online platform to help restoration practitioners
 ### Domain Model / Concept Model
 ```mermaid
     flowchart LR
-        A([Observation Service]) --> |fetches observations| B([CSIS])
-        A --> |determines eco-region| C([Eco-region Service])
-        D([Species Service]) --> |extracts species info| A
+        A([Observation]) --> |fetches observations| B([CSIS])
+        A --> |determines eco-region| C([Eco-region])
+        D([Species]) --> |extracts species info| A
         E([Biodiversity Indexer]) --> |uses| A
         E([Biodiversity Indexer]) --> |uses| D
         F([Habitat Indicator]) --> |uses| D
