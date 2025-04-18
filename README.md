@@ -138,7 +138,7 @@ Build online platform to help restoration practitioners
         APIGateway <--> HHIS([HabitatHealthIndicatorService])
         Obs([ObservationsService]) --> |Fetches Observations| CSIS([CSIS])
         Obs --> |Get matching Eco-region<br/>for observation| EcoRegionService
-        EcoRegionService --> |CRUD on eco-regions| EcoRSQL[(Key-Value Store)]
+        EcoRegionService --> |CRUD on eco-regions| EcoRSQL[(NoSQL Store)]
         Obs --> |CRUD on observations| ObsSQL[(SQL Datastore)] 
         Sps([SpeciesService]) --> |Extracts Species Info| Obs
         Sps --> |CRUD Species data| SpsStore[(SQL Datastore)]
